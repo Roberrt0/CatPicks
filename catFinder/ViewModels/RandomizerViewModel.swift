@@ -120,8 +120,8 @@ class RandomizerViewModel: ObservableObject {
         
     }
     
-    func getImages() -> [UIImage] {
-        imagesService.getAll()
+    func getImages() -> [Photo] {
+        imagesService.getAll() ?? []
     }
     
 }

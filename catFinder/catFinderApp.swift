@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct modeladoappApp: App {
+struct catFinderApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

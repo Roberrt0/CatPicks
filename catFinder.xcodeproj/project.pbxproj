@@ -10,9 +10,11 @@
 		621B3E072CF65712005B3449 /* CatCountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621B3E062CF65712005B3449 /* CatCountManager.swift */; };
 		622A7A8F2D07BFA100864A92 /* ImagesDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622A7A8E2D07BFA100864A92 /* ImagesDataService.swift */; };
 		622A7A912D07C6B800864A92 /* SavingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622A7A902D07C6B800864A92 /* SavingImageView.swift */; };
+		6230FFF42D63D86E0005D4AD /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6230FFF32D63D86E0005D4AD /* ImageModel.swift */; };
+		6230FFF62D63E3A70005D4AD /* GalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6230FFF52D63E3A70005D4AD /* GalleryViewModel.swift */; };
 		623DF0C92D51969600008EA8 /* TestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623DF0C82D51969600008EA8 /* TestingView.swift */; };
-		624E86A62D62FD470007DE72 /* FullScreenImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624E86A52D62FD470007DE72 /* FullScreenImageView.swift */; };
-		62680F042CF5407F00D3DF86 /* modeladoappApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62680F032CF5407F00D3DF86 /* modeladoappApp.swift */; };
+		624E86A62D62FD470007DE72 /* FullScreenPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624E86A52D62FD470007DE72 /* FullScreenPhotoView.swift */; };
+		62680F042CF5407F00D3DF86 /* catFinderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62680F032CF5407F00D3DF86 /* catFinderApp.swift */; };
 		62680F062CF5407F00D3DF86 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62680F052CF5407F00D3DF86 /* ContentView.swift */; };
 		62680F082CF5408000D3DF86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62680F072CF5408000D3DF86 /* Assets.xcassets */; };
 		62680F0B2CF5408000D3DF86 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62680F0A2CF5408000D3DF86 /* Preview Assets.xcassets */; };
@@ -28,10 +30,12 @@
 		621B3E062CF65712005B3449 /* CatCountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatCountManager.swift; sourceTree = "<group>"; };
 		622A7A8E2D07BFA100864A92 /* ImagesDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesDataService.swift; sourceTree = "<group>"; };
 		622A7A902D07C6B800864A92 /* SavingImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingImageView.swift; sourceTree = "<group>"; };
+		6230FFF32D63D86E0005D4AD /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
+		6230FFF52D63E3A70005D4AD /* GalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewModel.swift; sourceTree = "<group>"; };
 		623DF0C82D51969600008EA8 /* TestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingView.swift; sourceTree = "<group>"; };
-		624E86A52D62FD470007DE72 /* FullScreenImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenImageView.swift; sourceTree = "<group>"; };
+		624E86A52D62FD470007DE72 /* FullScreenPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenPhotoView.swift; sourceTree = "<group>"; };
 		62680F002CF5407F00D3DF86 /* modeladoapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = modeladoapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		62680F032CF5407F00D3DF86 /* modeladoappApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = modeladoappApp.swift; sourceTree = "<group>"; };
+		62680F032CF5407F00D3DF86 /* catFinderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = catFinderApp.swift; sourceTree = "<group>"; };
 		62680F052CF5407F00D3DF86 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		62680F072CF5408000D3DF86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62680F0A2CF5408000D3DF86 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -57,7 +61,7 @@
 		62680EF72CF5407F00D3DF86 = {
 			isa = PBXGroup;
 			children = (
-				62680F022CF5407F00D3DF86 /* modeladoapp */,
+				62680F022CF5407F00D3DF86 /* catFinder */,
 				62680F012CF5407F00D3DF86 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -70,10 +74,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		62680F022CF5407F00D3DF86 /* modeladoapp */ = {
+		62680F022CF5407F00D3DF86 /* catFinder */ = {
 			isa = PBXGroup;
 			children = (
-				62680F032CF5407F00D3DF86 /* modeladoappApp.swift */,
+				62680F032CF5407F00D3DF86 /* catFinderApp.swift */,
 				62680F052CF5407F00D3DF86 /* ContentView.swift */,
 				62680F142CF540D800D3DF86 /* Utilities */,
 				62680F1F2CF548B600D3DF86 /* Models */,
@@ -82,7 +86,7 @@
 				62680F072CF5408000D3DF86 /* Assets.xcassets */,
 				62680F092CF5408000D3DF86 /* Preview Content */,
 			);
-			path = modeladoapp;
+			path = catFinder;
 			sourceTree = "<group>";
 		};
 		62680F092CF5408000D3DF86 /* Preview Content */ = {
@@ -97,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				62680F1C2CF547CF00D3DF86 /* RandomizerViewModel.swift */,
+				6230FFF52D63E3A70005D4AD /* GalleryViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -107,7 +112,7 @@
 				62680F152CF540ED00D3DF86 /* StartingView.swift */,
 				62680F1A2CF547B600D3DF86 /* RandomizerView.swift */,
 				62B7A9892CFBDCBC00BA8DFC /* Gallery.swift */,
-				624E86A52D62FD470007DE72 /* FullScreenImageView.swift */,
+				624E86A52D62FD470007DE72 /* FullScreenPhotoView.swift */,
 				622A7A902D07C6B800864A92 /* SavingImageView.swift */,
 				623DF0C82D51969600008EA8 /* TestingView.swift */,
 			);
@@ -128,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				62680F202CF548C400D3DF86 /* CatModel.swift */,
+				6230FFF32D63D86E0005D4AD /* ImageModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -203,18 +209,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				62680F162CF540ED00D3DF86 /* StartingView.swift in Sources */,
+				6230FFF62D63E3A70005D4AD /* GalleryViewModel.swift in Sources */,
 				62B7A98A2CFBDCBC00BA8DFC /* Gallery.swift in Sources */,
 				62680F062CF5407F00D3DF86 /* ContentView.swift in Sources */,
-				62680F042CF5407F00D3DF86 /* modeladoappApp.swift in Sources */,
+				62680F042CF5407F00D3DF86 /* catFinderApp.swift in Sources */,
 				62680F1D2CF547CF00D3DF86 /* RandomizerViewModel.swift in Sources */,
 				623DF0C92D51969600008EA8 /* TestingView.swift in Sources */,
 				621B3E072CF65712005B3449 /* CatCountManager.swift in Sources */,
-				624E86A62D62FD470007DE72 /* FullScreenImageView.swift in Sources */,
+				624E86A62D62FD470007DE72 /* FullScreenPhotoView.swift in Sources */,
 				62680F192CF543A500D3DF86 /* ThirdDimensional.swift in Sources */,
 				622A7A8F2D07BFA100864A92 /* ImagesDataService.swift in Sources */,
 				622A7A912D07C6B800864A92 /* SavingImageView.swift in Sources */,
 				62680F1B2CF547B600D3DF86 /* RandomizerView.swift in Sources */,
 				62680F212CF548C400D3DF86 /* CatModel.swift in Sources */,
+				6230FFF42D63D86E0005D4AD /* ImageModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +355,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"modeladoapp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"catFinder/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -375,7 +383,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"modeladoapp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"catFinder/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

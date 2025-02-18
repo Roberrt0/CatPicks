@@ -6,3 +6,22 @@
 //
 
 import Foundation
+
+class GalleryViewModel: ObservableObject {
+    
+    @Published var photos: [Photo] = []
+    private let imagesService = ImagesDataService.shared
+    
+    init() {
+        loadPhotos()
+    }
+    
+    func loadPhotos() {
+        photos = imagesService.getAll() ?? []
+    }
+    
+    func deletePhoto(_ photo: Photo) {
+        ImagesDataService.shared.delete(key: photo.id)
+        loadPhotos()
+    }
+}

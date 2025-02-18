@@ -12,6 +12,7 @@ import SwiftUI
 struct RandomizerView: View {
     
     @StateObject var vm = RandomizerViewModel()
+    @State private var saved = false
     
     var body: some View {
         ZStack {
@@ -56,7 +57,7 @@ struct RandomizerView: View {
         HStack {
             Text("Cats seen: \(vm.sessionCount)")
             Spacer()
-            NavigationLink(destination: Gallery(images: vm.getImages())) {
+            NavigationLink(destination: Gallery()) {
                 Text("Gallery")
             }
         }
@@ -71,8 +72,9 @@ struct RandomizerView: View {
     var saveButton: some View {
         Button {
             vm.saveButtonPressed()
+            saved.toggle()
         } label: {
-           Image(systemName: "bookmark")
+            Image(systemName: saved ? "bookmark.fill" : "bookmark")
                 .font(.largeTitle)
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 30)
@@ -98,35 +100,3 @@ struct RandomizerView: View {
         RandomizerView()
     }
 }
-
-
-
-// MARK: trash
-
-// popover for total count
-
-//Button {
-//    showPopover.toggle()
-//} label: {
-//    Image(systemName: "info")
-//        .padding(10)
-//        .foregroundStyle(.black)
-//        .background(.white)
-//        .clipShape(Circle())
-//        .popover(isPresented: $showPopover, attachmentAnchor: .point(.bottomLeading), arrowEdge: .top, content: {
-//            Text("Total cats seen: \(vm.totalCount)")
-//                .padding()
-//                .foregroundStyle(.black)
-//                .presentationCompactAdaptation(.popover)
-//        })
-//}
-
-// line of cat icons
-
-//var fiveCatsLine: some View {
-//    HStack {
-//        ForEach(0..<5, id: \.self) { _ in
-//            Image(systemName: "cat.fill")
-//        }
-//    }
-//}

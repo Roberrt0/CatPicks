@@ -102,27 +102,28 @@ class ImagesDataService {
         return UIImage(contentsOfFile: url.path)
     }
     
-    func getAll() -> [UIImage] {
-        guard
-            let url = getFolderPath(),
-            FileManager.default.fileExists(atPath: url.path) else {
-            print("image folder doesnt exist")
-            return []
+    func getAll() -> [Photo]? {
+        guard let url = getFolderPath() else {
+            print("Image folder doesn't exist")
+            return nil
         }
-        
+
         do {
             let contentPaths = try FileManager.default.contentsOfDirectory(atPath: url.path)
-            
-            let images = contentPaths.compactMap { fileName -> UIImage? in
+
+            let photos = contentPaths.compactMap { fileName -> Photo? in
                 let fileURL = url.appendingPathComponent(fileName)
-                guard let imageData = try? Data(contentsOf: fileURL) else { return nil }
-                return UIImage(data: imageData)
+                guard let image = UIImage(contentsOfFile: fileURL.path) else { return nil }
+
+                let id = fileName.replacingOccurrences(of: ".png", with: "")
+                return Photo(id: id, image: image)
             }
-            
-            return images
+
+            return photos
+
         } catch let error {
-            print("Error while fetching all images. \(error)")
-            return []
+            print("Error while fetching images: \(error)")
+            return nil
         }
     }
     

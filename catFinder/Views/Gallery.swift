@@ -9,8 +9,11 @@ import SwiftUI
 
 struct Gallery: View {
     
-    let images: [UIImage]
+    @StateObject private var vm = GalleryViewModel()
     private let spacing: CGFloat = 10 // padding of each cell
+    
+    @State private var selectedPhoto: Photo?
+    @State private var fullScreenPresented = false
     
     // Calculate square cells based on screen width and spacing
     var columns: [GridItem] {
@@ -21,29 +24,37 @@ struct Gallery: View {
     var body: some View {
         ScrollView {
             LazyVGrid(columns: columns, spacing: spacing) {
-                ForEach(images, id: \.self) { image in
-                    Image(uiImage: image)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: (UIScreen.main.bounds.width - (4 * spacing)) / 3,
-                               height: (UIScreen.main.bounds.width - (4 * spacing)) / 3)
-                        .clipped()
-                        .cornerRadius(5)
-                        .onTapGesture {
-                            print("Image tapped")
-                        }
+                ForEach(vm.photos) { photo in
+                    getCell(for: photo)
                 }
             }
             .padding(spacing)
         }
         .background(Color.purple.ignoresSafeArea())
         .navigationTitle("Gallery")
-//        .navigationBarTitleDisplayMode(.inline)
+        .navigationBarTitleDisplayMode(.inline)
+        .fullScreenCover(item: $selectedPhoto) { photo in
+            FullScreenPhotoView(photo: photo, onDelete: {vm.deletePhoto(photo)})
+        }
+    }
+    
+    func getCell(for item: Photo) -> some View {
+        Image(uiImage: item.image)
+            .resizable()
+            .scaledToFill()
+            .frame(width: (UIScreen.main.bounds.width - (4 * spacing)) / 3,
+                   height: (UIScreen.main.bounds.width - (4 * spacing)) / 3)
+            .clipped()
+            .cornerRadius(5)
+            .onTapGesture {
+                selectedPhoto = item
+                fullScreenPresented = true
+            }
     }
 }
 
 #Preview {
     NavigationStack {
-        Gallery(images: RandomizerViewModel().getImages())
+        Gallery()
     }
 }

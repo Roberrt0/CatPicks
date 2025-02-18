@@ -6,3 +6,9 @@
 //
 
 import Foundation
+import SwiftUI
+
+struct Photo: Identifiable {
+    let id: String
+    let image: UIImage
+}

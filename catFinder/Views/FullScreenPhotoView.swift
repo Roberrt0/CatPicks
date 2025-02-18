@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FullScreenPhotoView: View {
     let photo: Photo
+    let onDelete: () -> Void
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
@@ -36,7 +37,8 @@ struct FullScreenPhotoView: View {
     var ellipsisMenu: some View {
         Menu {
             Button(role: .destructive) {
-                print("deleting...")
+                onDelete()
+                dismiss()
             } label: {
                 Label("Delete", systemImage: "trash")
             }
@@ -53,6 +55,6 @@ struct FullScreenPhotoView: View {
         let key = "splatoon-picture"
         let image = UIImage(resource: ImageResource(name: key, bundle: .main))
         let photo = Photo(id: key, image: image)
-        FullScreenPhotoView(photo: photo)
+        FullScreenPhotoView(photo: photo) { print("fake delete") }
     }
 }
