@@ -7,16 +7,16 @@
 
 import SwiftUI
 
-struct FullScreenImageView: View {
-    let image: UIImage
-    @Environment(\.dismiss) var dismiss
+struct FullScreenPhotoView: View {
+    let photo: Photo
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         ZStack {
             Color.black.ignoresSafeArea().onTapGesture {
                 print("background pressed")
             }
-            Image(uiImage: image)
+            Image(uiImage: photo.image)
                 .resizable()
                 .scaledToFit()
             
@@ -49,5 +49,10 @@ struct FullScreenImageView: View {
 
 
 #Preview {
-    FullScreenImageView(image: UIImage(resource: ImageResource(name: "splatoon-picture", bundle: .main)))
+    ZStack {
+        let key = "splatoon-picture"
+        let image = UIImage(resource: ImageResource(name: key, bundle: .main))
+        let photo = Photo(id: key, image: image)
+        FullScreenPhotoView(photo: photo)
+    }
 }
