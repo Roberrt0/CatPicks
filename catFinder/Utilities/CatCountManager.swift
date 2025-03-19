@@ -11,11 +11,9 @@ import SwiftUI
 
 /*
  SINGLETON CLASS
- - manages the total and per session count of seen cats
+ manages the total and per session count of seen cats
  
- *notes*
- consider if the count should be increased if by any chance
- a cat that has already been seen pops up again
+ Currently NOT in use
  */
 
 class CatCountManager {
@@ -26,22 +24,14 @@ class CatCountManager {
     static let shared = CatCountManager()
     
     private init() {}
-    
-    // obsolete deinit
-    /*
-//    deinit {
-//        sumTotal()
-//        print("manager deinitialized!")
-//    }
-     */
-    
+  
     // MARK: methods
     func increase() {
         sessionCount += 1
         totalCount += 1
     }
     
-    // obsolete func
+    // obsolete
     func sumTotal() {
         totalCount += sessionCount
         sessionCount = 0

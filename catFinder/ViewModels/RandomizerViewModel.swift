@@ -5,9 +5,11 @@
 //  Created by Luis Roberto Martinez on 25/11/24.
 //
 
-// Consider using a subview to show the image and manage saving and stuff
-
-// me quede en la funcion load image
+/*
+ TO DO:
+ 1) optimize api related functions
+ 2) delete/move gallery function placeholders
+ */
 
 import SwiftUI
 import Combine
@@ -34,7 +36,7 @@ class RandomizerViewModel: ObservableObject {
     
     // MARK: methods
     
-    // calls api to fetch a new random cat
+    // Api call to fech a random cat
     func getCat() {
         guard let url = URL(string: catApiUrlStringSingle) else { return }
         
@@ -70,7 +72,7 @@ class RandomizerViewModel: ObservableObject {
         cat?.getURL()
     }
     
-    // use cat url to pull image from the internet
+    // pulls image from the URL
     func loadImage() {
         guard let url = getImageURL() else {
             print("cant get cat url")
@@ -79,7 +81,7 @@ class RandomizerViewModel: ObservableObject {
         
         // the whole task was not stored properly and it was being deallocated
         // so it seems like storing in cancellables really is that important
-        //let task =
+        //let task = // this ref. was being dumped
         URLSession.shared.dataTaskPublisher(for: url)
             .receive(on: DispatchQueue.main)
             .tryMap(handleOutput)
@@ -114,7 +116,6 @@ class RandomizerViewModel: ObservableObject {
     }
     
     // MARK: GALLERY FUNCTIONS
-    
     
     func moveImage() {
         
