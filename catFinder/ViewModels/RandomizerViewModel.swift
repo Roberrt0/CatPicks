@@ -34,9 +34,9 @@ class RandomizerViewModel: ObservableObject {
     }
     
     
-    // MARK: methods
+    // MARK: API RELATED METHODS
     
-    // Api call to fech a random cat
+    // CatApi call
     func getCat() {
         guard let url = URL(string: catApiUrlStringSingle) else { return }
         
@@ -79,9 +79,6 @@ class RandomizerViewModel: ObservableObject {
             return
         }
         
-        // the whole task was not stored properly and it was being deallocated
-        // so it seems like storing in cancellables really is that important
-        //let task = // this ref. was being dumped
         URLSession.shared.dataTaskPublisher(for: url)
             .receive(on: DispatchQueue.main)
             .tryMap(handleOutput)
@@ -97,15 +94,16 @@ class RandomizerViewModel: ObservableObject {
                 self?.image = newImage
             }
             .store(in: &canceallables)
-        print("loadImage() finish")
     }
+    
+    // MARK: OTHER METHODS
     
     // Observes any changes on the manager´s count variable
     func addSessionCountObserver() {
         countersManager.$sessionCount.assign(to: &$sessionCount)
     }
     
-    // saves/unsaves the image from the local storage
+    // saves/unsaves the image from the local storage - DEPRECATED
     func saveButtonPressed() {
         guard let id = cat?.id, let image else { return }
         if imagesService.isImageSaved(key: id) {
@@ -115,15 +113,12 @@ class RandomizerViewModel: ObservableObject {
         }
     }
     
-    // MARK: GALLERY FUNCTIONS
-    
-    func moveImage() {
-        
+    func swipeCompletion(saveImage: Bool) {
+        if saveImage, let id = cat?.id, let image {
+            imagesService.add(key: id, value: image)
+        }
+        getCat()
     }
-    
-    func getImages() -> [Photo] {
-        imagesService.getAll() ?? []
-    }
-    
+   
 }
 

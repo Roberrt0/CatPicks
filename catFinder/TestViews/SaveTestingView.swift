@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TestingView: View {
+struct SaveTestingView: View {
     
     @State var image: UIImage?
     let service = ImagesDataService.shared
@@ -98,7 +98,7 @@ struct TestingView: View {
 }
 
 #Preview {
-    TestingView()
+    SaveTestingView()
 }
 
 //HStack {

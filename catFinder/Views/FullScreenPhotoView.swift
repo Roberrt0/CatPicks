@@ -43,7 +43,7 @@ struct FullScreenPhotoView: View {
                 Label("Delete", systemImage: "trash")
             }
         } label: {
-            Image(systemName: "ellipsis")
+            Image(systemName: "trash")
                 .foregroundColor(.white)
         }
     }
@@ -55,6 +55,9 @@ struct FullScreenPhotoView: View {
         let key = "splatoon-picture"
         let image = UIImage(resource: ImageResource(name: key, bundle: .main))
         let photo = Photo(id: key, image: image)
-        FullScreenPhotoView(photo: photo) { print("fake delete") }
+        
+        FullScreenPhotoView(photo: photo) {
+            print("fake delete")
+        }
     }
 }

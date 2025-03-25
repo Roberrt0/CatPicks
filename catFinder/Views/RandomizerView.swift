@@ -6,6 +6,11 @@
 //
 
 /* check stats variable for "vm.image != nil" code */
+/* To Do
+ 1) finish swipe functionality
+ 2) fix gallery order of recent saves
+ 3) add styles and animations
+ */
 
 import SwiftUI
 
@@ -16,7 +21,6 @@ struct RandomizerView: View {
     
     var body: some View {
         ZStack {
-            
             // background
             Color.purple.ignoresSafeArea()
             
@@ -24,51 +28,72 @@ struct RandomizerView: View {
             VStack(spacing: 30) {
                 HStack {
                     Image(systemName: "cat.fill")
-                    Text("CatRandomizer")
+                    Text("CatFinder")
                         .font(.title)
                         .bold()
                         .underline(color: .white)
                     Image(systemName: "cat.fill")
                 }.frame(maxWidth: .infinity)
                 
-                stats
-                
-                Spacer()
-                if let image = vm.image {
-                    Image(uiImage: image)
-                        .resizable()
-                        .scaledToFit()
+                VStack {
+                    if let image = vm.image {
+                        SwipeableImage(
+                            uiImage: image,
+                            onSwipeCompletion: vm.swipeCompletion
+                        )
+                        .transition(AsymmetricTransition(insertion: .push(from: .top), removal: .opacity))
+                    }
                 }
-                Spacer()
+                .id(vm.image)
+                .frame(maxHeight: .infinity)
+               
                 
-                VStack(alignment: .trailing, spacing: 20) {
-                    saveButton
-                    randomizerButton
-                }.padding()
+//                VStack(alignment: .trailing, spacing: 20) {
+//                    saveButton
+//                    randomizerButton
+//                }.padding()
+                
+                HStack {
+                    Button {
+                        vm.swipeCompletion(saveImage: false)
+                    } label: {
+                        Text("<< Next")
+                    }
+                    
+                    Spacer()
+                    Text("Swipe or click")
+                        .font(.headline)
+                        .foregroundStyle(.secondary)
+                    Spacer()
+                    Button {
+                        vm.swipeCompletion(saveImage: true)
+                    } label: {
+                        Text("Save >>")
+                    }
+                }
+                .font(.title3)
+                .fontWeight(.semibold)
                 
             }
             .foregroundStyle(.white)
+            .padding()
             
+        }
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Text("Cats seen: \(vm.sessionCount)")
+                    .foregroundStyle(.white)
+            }
+            ToolbarItem(placement: .topBarTrailing) {
+                NavigationLink(destination: Gallery()) {
+                    Text("Gallery")
+                }
+            }
         }
         .navigationBarBackButtonHidden()
     }
     
-    var stats: some View {
-        HStack {
-            Text("Cats seen: \(vm.sessionCount)")
-            Spacer()
-            NavigationLink(destination: Gallery()) {
-                Text("Gallery")
-            }
-        }
-        .font(.headline)
-        .padding()
-        .onTapGesture {
-            let imageExists = vm.image != nil
-            print("image: \(imageExists)")
-        }
-    }
-    
+    // Deprecated buttons
     var saveButton: some View {
         Button {
             vm.saveButtonPressed()
@@ -97,6 +122,6 @@ struct RandomizerView: View {
 
 #Preview {
     NavigationStack {
-        RandomizerView()
+        RandomizerView().tint(.white)
     }
 }
