@@ -13,7 +13,7 @@
 		6230FFF62D63E3A70005D4AD /* GalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6230FFF52D63E3A70005D4AD /* GalleryViewModel.swift */; };
 		623DF0C92D51969600008EA8 /* SaveTestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623DF0C82D51969600008EA8 /* SaveTestingView.swift */; };
 		624E86A62D62FD470007DE72 /* FullScreenPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624E86A52D62FD470007DE72 /* FullScreenPhotoView.swift */; };
-		62680F042CF5407F00D3DF86 /* catFinderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62680F032CF5407F00D3DF86 /* catFinderApp.swift */; };
+		62680F042CF5407F00D3DF86 /* CatPicksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62680F032CF5407F00D3DF86 /* CatPicksApp.swift */; };
 		62680F062CF5407F00D3DF86 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62680F052CF5407F00D3DF86 /* ContentView.swift */; };
 		62680F082CF5408000D3DF86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62680F072CF5408000D3DF86 /* Assets.xcassets */; };
 		62680F0B2CF5408000D3DF86 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62680F0A2CF5408000D3DF86 /* Preview Assets.xcassets */; };
@@ -35,7 +35,7 @@
 		623DF0C82D51969600008EA8 /* SaveTestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTestingView.swift; sourceTree = "<group>"; };
 		624E86A52D62FD470007DE72 /* FullScreenPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenPhotoView.swift; sourceTree = "<group>"; };
 		62680F002CF5407F00D3DF86 /* CatPicks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatPicks.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		62680F032CF5407F00D3DF86 /* catFinderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = catFinderApp.swift; sourceTree = "<group>"; };
+		62680F032CF5407F00D3DF86 /* CatPicksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatPicksApp.swift; sourceTree = "<group>"; };
 		62680F052CF5407F00D3DF86 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		62680F072CF5408000D3DF86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62680F0A2CF5408000D3DF86 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -63,7 +63,7 @@
 		62680EF72CF5407F00D3DF86 = {
 			isa = PBXGroup;
 			children = (
-				62680F022CF5407F00D3DF86 /* catFinder */,
+				62680F022CF5407F00D3DF86 /* CatPicks */,
 				62680F012CF5407F00D3DF86 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -76,10 +76,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		62680F022CF5407F00D3DF86 /* catFinder */ = {
+		62680F022CF5407F00D3DF86 /* CatPicks */ = {
 			isa = PBXGroup;
 			children = (
-				62680F032CF5407F00D3DF86 /* catFinderApp.swift */,
+				62680F032CF5407F00D3DF86 /* CatPicksApp.swift */,
 				62680F052CF5407F00D3DF86 /* ContentView.swift */,
 				62680F142CF540D800D3DF86 /* Utilities */,
 				62680F1F2CF548B600D3DF86 /* Models */,
@@ -89,7 +89,7 @@
 				62680F072CF5408000D3DF86 /* Assets.xcassets */,
 				62680F092CF5408000D3DF86 /* Preview Content */,
 			);
-			path = catFinder;
+			path = CatPicks;
 			sourceTree = "<group>";
 		};
 		62680F092CF5408000D3DF86 /* Preview Content */ = {
@@ -223,7 +223,7 @@
 				6230FFF62D63E3A70005D4AD /* GalleryViewModel.swift in Sources */,
 				62B7A98A2CFBDCBC00BA8DFC /* Gallery.swift in Sources */,
 				62680F062CF5407F00D3DF86 /* ContentView.swift in Sources */,
-				62680F042CF5407F00D3DF86 /* catFinderApp.swift in Sources */,
+				62680F042CF5407F00D3DF86 /* CatPicksApp.swift in Sources */,
 				62680F1D2CF547CF00D3DF86 /* RandomizerViewModel.swift in Sources */,
 				623DF0C92D51969600008EA8 /* SaveTestingView.swift in Sources */,
 				621B3E072CF65712005B3449 /* CatCountManager.swift in Sources */,

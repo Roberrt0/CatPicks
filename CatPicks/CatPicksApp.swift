@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct catFinderApp: App {
+struct CatPicksApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
