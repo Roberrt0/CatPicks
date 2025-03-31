@@ -12,37 +12,40 @@ struct StartingView: View {
         NavigationStack {
             ZStack {
                 
-                Color.purple.ignoresSafeArea()
+//                Color.purple.ignoresSafeArea() // 1
+                Color.yellow.opacity(0.1).ignoresSafeArea() // 2
                 
                 VStack(spacing: 40) {
                     Spacer()
+                    
                     VStack {
-                        Image(systemName: "cat.fill")
+                        Image("cat-emoji") // 2
                             .resizable()
                             .scaledToFit()
-                        Text("Cat Randomizer")
-                            .font(.title)
-                            .bold()
-                            .underline(color: .white)
+                        Image("catpicks-logo-simple")
+                            .resizable()
+                            .scaledToFit()
                     }
                     
-                    Text("Get a random image of a cat, thats all there is to the app, any cat lover would be instantly cautivated by the endless amount of cats you can find here.")
+                    Text("Watch endless pictures of cats from all around the world and save your favorite ones so you can view them anywhere at any time!")
                         .font(.headline)
+                        .multilineTextAlignment(.center)
                     
                     Spacer()
                     
                     NavigationLink("Start Randomizing") {
                         RandomizerView()
                     }
-                    .buttonStyle(ThirdDimensional(color: .white))
+                    .buttonStyle(ThirdDimensional(color: .mint))
+                    .foregroundStyle(.white)
                     .foregroundStyle(.black)
                     .font(.headline)
+                    .fontWeight(.bold)
                     
                     Spacer()
                 }
                 .padding(40)
-                .foregroundStyle(.white)
-            }
+            } // Zstack end
         }
     }
 }

@@ -30,7 +30,7 @@ struct Gallery: View {
             }
             .padding(spacing)
         }
-        .background(Color.purple.ignoresSafeArea())
+        .background(Color.yellow.opacity(0.1).ignoresSafeArea())
         .navigationTitle("Gallery")
         .navigationBarTitleDisplayMode(.inline)
         .fullScreenCover(item: $selectedPhoto) { photo in

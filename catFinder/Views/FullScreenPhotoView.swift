@@ -24,17 +24,17 @@ struct FullScreenPhotoView: View {
             HStack {
                 Image(systemName: "xmark").onTapGesture { dismiss() }
                 Spacer()
-                ellipsisMenu
+                deleteMenu
             }
             .bold()
             .font(.title)
             .foregroundStyle(.white)
-            .frame(maxHeight: .infinity, alignment: .top)
+            .frame(maxHeight: .infinity, alignment: .bottom)
             .padding()
         }
     }
     
-    var ellipsisMenu: some View {
+    var deleteMenu: some View {
         Menu {
             Button(role: .destructive) {
                 onDelete()

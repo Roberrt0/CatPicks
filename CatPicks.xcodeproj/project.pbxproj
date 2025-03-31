@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		621B3E072CF65712005B3449 /* CatCountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621B3E062CF65712005B3449 /* CatCountManager.swift */; };
 		622A7A8F2D07BFA100864A92 /* ImagesDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622A7A8E2D07BFA100864A92 /* ImagesDataService.swift */; };
-		622A7A912D07C6B800864A92 /* SavingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622A7A902D07C6B800864A92 /* SavingImageView.swift */; };
 		6230FFF42D63D86E0005D4AD /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6230FFF32D63D86E0005D4AD /* ImageModel.swift */; };
 		6230FFF62D63E3A70005D4AD /* GalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6230FFF52D63E3A70005D4AD /* GalleryViewModel.swift */; };
 		623DF0C92D51969600008EA8 /* SaveTestingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623DF0C82D51969600008EA8 /* SaveTestingView.swift */; };
@@ -31,12 +30,11 @@
 /* Begin PBXFileReference section */
 		621B3E062CF65712005B3449 /* CatCountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatCountManager.swift; sourceTree = "<group>"; };
 		622A7A8E2D07BFA100864A92 /* ImagesDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesDataService.swift; sourceTree = "<group>"; };
-		622A7A902D07C6B800864A92 /* SavingImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingImageView.swift; sourceTree = "<group>"; };
 		6230FFF32D63D86E0005D4AD /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 		6230FFF52D63E3A70005D4AD /* GalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewModel.swift; sourceTree = "<group>"; };
 		623DF0C82D51969600008EA8 /* SaveTestingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveTestingView.swift; sourceTree = "<group>"; };
 		624E86A52D62FD470007DE72 /* FullScreenPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenPhotoView.swift; sourceTree = "<group>"; };
-		62680F002CF5407F00D3DF86 /* modeladoapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = modeladoapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		62680F002CF5407F00D3DF86 /* CatPicks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatPicks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62680F032CF5407F00D3DF86 /* catFinderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = catFinderApp.swift; sourceTree = "<group>"; };
 		62680F052CF5407F00D3DF86 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		62680F072CF5408000D3DF86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -73,7 +71,7 @@
 		62680F012CF5407F00D3DF86 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				62680F002CF5407F00D3DF86 /* modeladoapp.app */,
+				62680F002CF5407F00D3DF86 /* CatPicks.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -119,7 +117,6 @@
 				626F2CE32D8B84F0007D6199 /* SwipeableImage.swift */,
 				62B7A9892CFBDCBC00BA8DFC /* Gallery.swift */,
 				624E86A52D62FD470007DE72 /* FullScreenPhotoView.swift */,
-				622A7A902D07C6B800864A92 /* SavingImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -169,7 +166,7 @@
 			);
 			name = modeladoapp;
 			productName = modeladoapp;
-			productReference = 62680F002CF5407F00D3DF86 /* modeladoapp.app */;
+			productReference = 62680F002CF5407F00D3DF86 /* CatPicks.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -187,7 +184,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 62680EFB2CF5407F00D3DF86 /* Build configuration list for PBXProject "catFinder" */;
+			buildConfigurationList = 62680EFB2CF5407F00D3DF86 /* Build configuration list for PBXProject "CatPicks" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -233,7 +230,6 @@
 				624E86A62D62FD470007DE72 /* FullScreenPhotoView.swift in Sources */,
 				62680F192CF543A500D3DF86 /* ThirdDimensional.swift in Sources */,
 				622A7A8F2D07BFA100864A92 /* ImagesDataService.swift in Sources */,
-				622A7A912D07C6B800864A92 /* SavingImageView.swift in Sources */,
 				626F2CE42D8B84F0007D6199 /* SwipeableImage.swift in Sources */,
 				62680F1B2CF547B600D3DF86 /* RandomizerView.swift in Sources */,
 				62680F212CF548C400D3DF86 /* CatModel.swift in Sources */,
@@ -385,7 +381,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.roberto.modeladoapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CatPicks;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -413,7 +409,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.roberto.modeladoapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CatPicks;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -423,7 +419,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		62680EFB2CF5407F00D3DF86 /* Build configuration list for PBXProject "catFinder" */ = {
+		62680EFB2CF5407F00D3DF86 /* Build configuration list for PBXProject "CatPicks" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				62680F0C2CF5408000D3DF86 /* Debug */,

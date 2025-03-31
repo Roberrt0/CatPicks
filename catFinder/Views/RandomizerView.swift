@@ -22,18 +22,23 @@ struct RandomizerView: View {
     var body: some View {
         ZStack {
             // background
-            Color.purple.ignoresSafeArea()
+            
+//            Color.purple.ignoresSafeArea() // 1
+            Color.yellow.opacity(0.1).ignoresSafeArea() // 2
+            
+            Image("cat-emoji")
+                .resizable()
+                .scaledToFit()
+                .opacity(0.3)
+                .padding(.horizontal)
             
             // foreground
             VStack(spacing: 30) {
-                HStack {
-                    Image(systemName: "cat.fill")
-                    Text("CatFinder")
-                        .font(.title)
-                        .bold()
-                        .underline(color: .white)
-                    Image(systemName: "cat.fill")
-                }.frame(maxWidth: .infinity)
+                Image("catpicks-logo-simple")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 30)
                 
                 VStack {
                     if let image = vm.image {
@@ -42,22 +47,25 @@ struct RandomizerView: View {
                             onSwipeCompletion: vm.swipeCompletion
                         )
                         .transition(AsymmetricTransition(insertion: .push(from: .top), removal: .opacity))
+                    } else {
+                        ProgressView()
                     }
                 }
                 .id(vm.image)
                 .frame(maxHeight: .infinity)
-               
-                
-//                VStack(alignment: .trailing, spacing: 20) {
-//                    saveButton
-//                    randomizerButton
-//                }.padding()
                 
                 HStack {
                     Button {
                         vm.swipeCompletion(saveImage: false)
                     } label: {
-                        Text("<< Next")
+                        HStack {
+                            Image(systemName: "arrow.left")
+                            Text("Next")
+                        }
+                        .foregroundStyle(.white)
+                        .padding()
+                        .background(.blue)
+                        .clipShape(RoundedRectangle(cornerRadius: 25.0))
                     }
                     
                     Spacer()
@@ -68,21 +76,30 @@ struct RandomizerView: View {
                     Button {
                         vm.swipeCompletion(saveImage: true)
                     } label: {
-                        Text("Save >>")
+                        HStack {
+                            Text("Save")
+                            Image(systemName: "arrow.right")
+                        }
+                        .foregroundStyle(.white)
+                        .padding()
+                        .background(.green)
+                        .clipShape(RoundedRectangle(cornerRadius: 25.0))
                     }
                 }
-                .font(.title3)
-                .fontWeight(.semibold)
-                
+                .font(.headline)
             }
-            .foregroundStyle(.white)
             .padding()
             
         }
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
-                Text("Cats seen: \(vm.sessionCount)")
-                    .foregroundStyle(.white)
+                HStack(spacing: 5) {
+                    Image(systemName: "pawprint.fill")
+                        .foregroundStyle(.catOrange)
+                    Text("\(vm.sessionCount)")
+                        .contentTransition(.numericText())
+                        .animation(.easeIn, value: vm.sessionCount)
+                }
             }
             ToolbarItem(placement: .topBarTrailing) {
                 NavigationLink(destination: Gallery()) {
@@ -93,7 +110,7 @@ struct RandomizerView: View {
         .navigationBarBackButtonHidden()
     }
     
-    // Deprecated buttons
+    // Unused previous buttons
     var saveButton: some View {
         Button {
             vm.saveButtonPressed()
@@ -122,6 +139,7 @@ struct RandomizerView: View {
 
 #Preview {
     NavigationStack {
-        RandomizerView().tint(.white)
+        RandomizerView()
+//            .tint(.white) // 1
     }
 }

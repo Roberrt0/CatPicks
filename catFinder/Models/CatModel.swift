@@ -10,8 +10,8 @@ import Foundation
 
 /*
   - WARNING! -
- api´s output data does NOT include the breeds property
- the output data is a non optional array even for a single image
+ - api´s returned data does NOT include the breeds property
+ - the output data is a non optional array even for a single image
  */
 
 

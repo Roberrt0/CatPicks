@@ -19,10 +19,16 @@ struct SwipeableImage: View {
     var body: some View {
         GeometryReader { proxy in
             ZStack {
-                // background
                 //statistics // debugging
                 
-                Color.white.opacity(0.2).clipShape(RoundedRectangle(cornerRadius: 50))
+                // contrast with dark background
+//                Color.white.opacity(0.2)
+//                    .clipShape(RoundedRectangle(cornerRadius: 50))
+//                    .opacity(getOpacity())
+                
+                // contrast with bright background
+                Color.gray.opacity(0.2)
+                    .clipShape(RoundedRectangle(cornerRadius: 50))
                     .opacity(getOpacity())
                 
                 // foreground
@@ -30,7 +36,6 @@ struct SwipeableImage: View {
                     .resizable()
                     .scaledToFit()
                     .clipShape(RoundedRectangle(cornerRadius: 5.0))
-//                    .padding()
                     .padding(.vertical, 50)
             }
             
@@ -42,7 +47,7 @@ struct SwipeableImage: View {
         }
     }
     
-    // shows the state values - for debugging
+    // shows coordinates and other values
     var statistics: some View {
         VStack {
             Text("width: \(offset.width, specifier: "%.2f")").animation(.none)
@@ -101,7 +106,8 @@ struct SwipeableImage: View {
 
 #Preview {
     ZStack {
-        Color.purple.ignoresSafeArea()
+//        Color.purple.ignoresSafeArea() // 1
+        Color.yellow.opacity(0.1).ignoresSafeArea() // 2
         
         if let uiImage = UIImage(named: "splatoon-picture") {
             SwipeableImage(
